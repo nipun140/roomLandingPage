@@ -6,6 +6,7 @@ const rightBtn = document.querySelector(".btn-right");
 const slidesWrapper = document.querySelector(".slides-wrapper");
 const title = document.querySelector(".title");
 const desc = document.querySelector(".desc");
+const dotsContainer = document.querySelector(".dots-container");
 
 //mobile nav open
 openBtn.onclick = () => {
@@ -36,11 +37,16 @@ const data = [
 
 //slider js functionality
 let currentSlide = 0; //(0,1,2)
+const totalSlides = 3;
 
 function goToSlide() {
   slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
   title.innerHTML = data[currentSlide].title;
   desc.innerHTML = data[currentSlide].desc;
+
+  // update the active slide to the new dot clicked
+  document.querySelector(".dot.active-dot").classList.remove("active-dot");
+  dotsContainer.children[currentSlide].classList.add("active-dot");
 }
 
 leftBtn.onclick = () => {
@@ -62,3 +68,22 @@ rightBtn.onclick = () => {
     goToSlide(currentSlide);
   }
 };
+
+//function to create dots
+function createDots() {
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) {
+      dot.classList.add("active-dot");
+    }
+    dotsContainer.appendChild(dot);
+
+    dot.addEventListener("click", () => {
+      currentSlide = i;
+      goToSlide();
+    });
+  }
+}
+
+createDots();

@@ -40,6 +40,7 @@ html {
   grid-column: 9 / span 4;
 }
 
+//mobile navigation bar
 .mobile-nav {
   align-items: center;
   position: absolute;
@@ -81,7 +82,7 @@ html {
   display: flex;
 }
 
-// header
+//////////// header
 header {
   display: flex;
   align-items: center;
@@ -135,11 +136,35 @@ header {
   }
 }
 
+.dots-container {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  .dot {
+    height: 1.2rem;
+    width: 1.2rem;
+    border: 0.12rem solid black;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    background: $White;
+    transition: all 0.2s;
+    &:hover {
+      cursor: pointer;
+      background: $DarkGray;
+    }
+  }
+  .active-dot {
+    background: $VeryDarkGray;
+  }
+}
+
 //image-wrapper
 .slides-wrapper {
   height: 100%;
   width: 100%;
-  transition: all 0.1s;
+  transition: all 0.2s ease-in-out;
   position: relative;
   .image-slide {
     position: absolute;
