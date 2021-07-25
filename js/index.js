@@ -87,3 +87,29 @@ function createDots() {
 }
 
 createDots();
+
+//keyboard event
+window.addEventListener("keydown", (event) => {
+  switch (event.key) {
+    case "ArrowLeft":
+      if (currentSlide <= 0) {
+        currentSlide = 2;
+        goToSlide();
+      } else {
+        currentSlide -= 1;
+        goToSlide(currentSlide);
+      }
+      break;
+    case "ArrowRight":
+      if (currentSlide >= 2) {
+        currentSlide = 0;
+        goToSlide();
+      } else {
+        currentSlide += 1;
+        goToSlide(currentSlide);
+      }
+      break;
+    default:
+      break;
+  }
+});
