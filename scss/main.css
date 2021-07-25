@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Spartan", sans-serif;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (8.3333%)[12];
+      grid-template-columns: repeat(12, 8.3333%);
+  -ms-grid-rows: 65vh 35vh;
+      grid-template-rows: 65vh 35vh;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.item-1 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-column: 1 / span 7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.item-2 {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 5;
+  grid-column: 8 / span 5;
+}
+
+.item-3 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / span 4;
+}
+
+.item-4 {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 4;
+  grid-column: 5 / span 4;
+}
+
+.item-5 {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 4;
+  grid-column: 9 / span 4;
+}
+
+.mobile-nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: white;
+}
+
+.mobile-nav #closeBtn {
+  font-size: 1.7rem;
+  color: #a1a1a1;
+}
+
+.mobile-nav ul {
+  margin-left: 3rem;
+  list-style: none;
+}
+
+.mobile-nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+.mobile-nav ul li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.mobile-nav ul li:last-child {
+  margin-bottom: 0;
+}
+
+.close-mobile-nav {
+  display: none;
+}
+
+.open-mobile-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+
+header #openBtn {
+  display: none;
+  position: absolute;
+  left: 1rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+header .logo {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+header ul {
+  margin-left: 4rem;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header ul a {
+  font-size: 1.2rem;
+  margin-right: 2rem;
+  color: white;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+header ul a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0.2rem;
+  bottom: -0.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: white;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+header ul a:hover::after {
+  width: 100%;
+}
+
+.slides-wrapper {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  position: relative;
+}
+
+.slides-wrapper .image-slide {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.slides-wrapper .image-slide img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.slide-1 {
+  left: 0;
+}
+
+.slide-2 {
+  left: 100%;
+}
+
+.slide-3 {
+  left: 200%;
+}
+
+.text-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 6rem;
+  position: relative;
+}
+
+.item-2 .title {
+  font-size: 3rem;
+  color: black;
+}
+
+.item-2 .desc {
+  font-size: 1.2rem;
+  color: #a1a1a1;
+  margin: 2rem 0;
+}
+
+.item-2 .shop-btn {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-right: 1rem;
+}
+
+.item-2 .shop-btn:hover {
+  cursor: pointer;
+  color: #a1a1a1;
+}
+
+.control-btns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 8.3333vw;
+  height: 4.1665vw;
+}
+
+.control-btns .btn {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+}
+
+.control-btns .btn span {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.control-btns .btn:hover {
+  cursor: pointer;
+  background-color: #454545;
+}
+
+.item-4 {
+  padding: 2rem;
+}
+
+.item-4 h2 {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.item-4 p {
+  color: #a1a1a1;
+  font-size: 1rem;
+}
+
+.img-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 6.5px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 10px;
+  }
+  .grid-container {
+    display: block;
+  }
+  .item-1 {
+    height: 24rem;
+  }
+  .item-1 header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 0;
+  }
+  .item-1 header #openBtn {
+    display: unset;
+  }
+  .item-1 header ul {
+    display: none;
+  }
+  .item-2,
+  .item-4 {
+    padding: 6rem 5rem;
+  }
+  .item-2 .title {
+    font-size: 2.5rem;
+  }
+  .item-2 .control-btns {
+    left: unset;
+    right: 0;
+    bottom: 100%;
+    width: 8rem;
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  html {
+    font-size: 7px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
